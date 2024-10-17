@@ -1,4 +1,4 @@
-#Como instalar o Trivy
+# Como instalar o Trivy
 
 1. Usando o Snap:
 O Snap é um sistema de empacotamento universal para aplicações Linux. Ele facilita a instalação e atualização de aplicativos.
