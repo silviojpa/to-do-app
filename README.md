@@ -1,3 +1,19 @@
+
+# Plugin utilizados
+
+1. Docker
+- CloudBees Docker Build and Publish plugin
+- Docker Compose Build Step Plugin
+- Docker Pipeline
+- docker-build-step
+  
+2. Dependency-Check Plugin
+- OWASP Dependency-Check Plugin
+
+3. Sonarqube
+- SonarQube Scanner for Jenkins
+
+
 # Como instalar o Trivy
 
 1. Usando o Snap:
