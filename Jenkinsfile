@@ -8,19 +8,19 @@ pipeline {
     stages {
         stage('git-checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/to-do-app.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/silviojpa/to-do-app.git'
             }
         }
 
-    stage('Sonar Analysis') {
+    	stage('Sonar Analysis') {
             steps {
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=URL_OF_SONARQUBE -Dsonar.login=TOKEN_OF_SONARQUBE -Dsonar.projectName=to-do-app \
+                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://localhost:9000/ -Dsonar.login=TOKEN_OF_SONARQUBE -Dsonar.projectName=to-do-app \
                    -Dsonar.sources=. \
                    -Dsonar.projectKey=to-do-app '''
                }
             }
            
-		stage('OWASP Dependency Check') {
+	stage('OWASP Dependency Check') {
             steps {
                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DP'
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
